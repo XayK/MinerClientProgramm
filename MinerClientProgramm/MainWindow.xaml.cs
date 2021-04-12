@@ -23,7 +23,7 @@ namespace MinerClientProgramm
         //опрос майнера
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int port = 8888;
+            int port = 9078;
             string server = textBox1.Text.ToString();
 
             try
@@ -73,7 +73,7 @@ namespace MinerClientProgramm
         /// //////через список
         private void Button_AskList(object sender, RoutedEventArgs e)
         {
-            int port = 8888;
+            int port = 9078;
             string server = ListBox1.SelectedItem.ToString();
 
             try
@@ -182,6 +182,12 @@ namespace MinerClientProgramm
             {
                 receiver.Close();
             }
+        }
+
+        private void Button_WebList(object sender, RoutedEventArgs e)
+        {
+            string url = "https://" + ListBox1.SelectedItem.ToString() + ":22333";
+            Process.Start(url);
         }
     }
 }
